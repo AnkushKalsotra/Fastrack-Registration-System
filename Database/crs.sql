@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2020 at 11:37 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.27
+-- Generation Time: Feb 10, 2023 at 10:08 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,14 +33,16 @@ CREATE TABLE `add_fst` (
   `sub_code` varchar(255) NOT NULL,
   `credits` int(255) NOT NULL,
   `sem` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_fst`
 --
 
 INSERT INTO `add_fst` (`id`, `sub_name`, `sub_code`, `credits`, `sem`) VALUES
-(3, 'Kannada', '19KA4KATK', 4, 2);
+(3, 'Kannada', '18HS12', 4, 1),
+(4, 'Database Design', '18CS53', 4, 5),
+(6, 'Computer Network', '18IS52', 4, 5);
 
 -- --------------------------------------------------------
 
@@ -51,10 +52,10 @@ INSERT INTO `add_fst` (`id`, `sub_name`, `sub_code`, `credits`, `sem`) VALUES
 
 CREATE TABLE `add_s1` (
   `id` int(255) NOT NULL,
-  `sub_name` varchar(255) NOT NULL,
+  `sub_name` char(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_s1`
@@ -75,7 +76,7 @@ CREATE TABLE `add_s2` (
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_s2`
@@ -96,7 +97,7 @@ CREATE TABLE `add_s3` (
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_s3`
@@ -117,20 +118,21 @@ CREATE TABLE `add_s4` (
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_s4`
 --
 
 INSERT INTO `add_s4` (`id`, `sub_name`, `sub_code`, `credits`) VALUES
-(4, 'Linear Algerba', '19MA4BSLIA', 4),
-(5, 'TFCS', '19CS4PCTFC', 4),
-(6, 'DBMS', '19CS4PCDBM', 4),
-(7, 'ADA', '19CS4PCADA', 4),
-(8, 'Operating Systems', '19CS4PCOPS', 4),
-(9, 'EVS', '19HS4PCEVS', 2),
-(10, 'PW-2', '19CS4PCPW2', 2);
+(4, 'Linear Algerba', '18MA41', 4),
+(5, 'LDCO', '18IS42', 4),
+(6, 'DBMS', '18CS43', 4),
+(7, 'DMS', '18CS45', 4),
+(9, 'EVS', '18BT42', 2),
+(10, 'TOC', '18IS44', 2),
+(11, 'Operating System', '18IS43', 4),
+(12, 'Computer Network', '18IS52', 4);
 
 -- --------------------------------------------------------
 
@@ -143,14 +145,15 @@ CREATE TABLE `add_s5` (
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_s5`
 --
 
 INSERT INTO `add_s5` (`id`, `sub_name`, `sub_code`, `credits`) VALUES
-(2, 'AI', '19CS2PCAPS', 4);
+(3, 'Computer Network', '18IS52', 4),
+(22, 'Compiler Design', '18IS55', 4);
 
 -- --------------------------------------------------------
 
@@ -163,7 +166,7 @@ CREATE TABLE `add_s6` (
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_s6`
@@ -183,7 +186,7 @@ CREATE TABLE `add_s7` (
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_s7`
@@ -203,7 +206,7 @@ CREATE TABLE `add_s8` (
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `add_s8`
@@ -221,14 +224,50 @@ INSERT INTO `add_s8` (`id`, `sub_name`, `sub_code`, `credits`) VALUES
 CREATE TABLE `admin` (
   `admin_id` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`admin_id`, `password`) VALUES
-('hodCSE@bmsce.ac.in', 'hodcs');
+('hodCSE@bmsce.ac.in', 'hodcs'),
+('hodISE@rvce.edu.in', 'hodise');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chatbot`
+--
+
+CREATE TABLE `chatbot` (
+  `c_id` int(11) NOT NULL,
+  `queries` varchar(300) NOT NULL,
+  `replies` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `chatbot`
+--
+
+INSERT INTO `chatbot` (`c_id`, `queries`, `replies`) VALUES
+(0, 'hi|hey|hello|hii|hy', 'Hello there!'),
+(1, 'What is your name | what is your name? | What is ur name?', 'I dont have a name, I am a fastrack Chatbot but you can call me anything :)'),
+(3, 'who created you | who made u | who developed you? | who developed u ', 'I was developed by a team of 3rd year ISE students.'),
+(4, 'how can I register for fastrack examination? | how do I register for fastrack exam? | how can I register for fastrack | register me for fastrack', 'first goto Registered Subjects then select the subject that you want to register for fastrack examination. Press Submit and boom you have registered for fastrack');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fstsub_reg`
+--
+
+CREATE TABLE `fstsub_reg` (
+  `usn` int(20) NOT NULL,
+  `sub_name` varchar(20) NOT NULL,
+  `sub_code` varchar(20) NOT NULL,
+  `sem` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -249,14 +288,14 @@ CREATE TABLE `fst_reg` (
   `phno` bigint(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `fst_reg`
 --
 
 INSERT INTO `fst_reg` (`id`, `fname`, `lname`, `bdate`, `usn`, `email`, `dept`, `sem`, `gender`, `phno`, `image`, `password`) VALUES
-(2, 'Md Yaseen ', 'Ahmed', '2020-03-27', '1BM19CS404', 'yaseenmd.cs19@bmsce.ac.in', 'Computer Science & Engineering', 4, 'M', 9108735020, 'Desert.jpg', '25d55ad283aa400af464c76d713c07ad');
+(2, 'Ankush', 'Kalsotra', '2002-03-27', '1RV20CS404', 'ankushkalsotra.is20@rvce.edu.in', 'Computer Science & Engineering', 4, 'M', 9108735020, 'Desert.jpg', '25d55ad283aa400af464c76d713c07ad');
 
 -- --------------------------------------------------------
 
@@ -277,16 +316,18 @@ CREATE TABLE `registration` (
   `phno` bigint(11) NOT NULL,
   `image` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
 --
 
 INSERT INTO `registration` (`id`, `fname`, `lname`, `bdate`, `usn`, `email`, `dept`, `sem`, `gender`, `phno`, `image`, `password`) VALUES
-(24, 'Arbaz', 'Ahmed', '1999-01-06', '1BM19CS401', 'arbazahmed.cs19@bmsce.ac.in', 'Computer Science & Engineering', 4, 'M', 6361389410, 'WhatsApp Image 2020-03-26 at 9.31.12 PM.jpeg', '25f9e794323b453885f5181f1b624d0b'),
-(27, 'Md Yaseen', 'Ahmed', '2001-04-23', '1BM19CS404', 'yaseenmd.cs19@bmsce.ac.in', 'Computer Science & Engineering', 4, 'M', 9108735020, 'md_yaseen.jpeg', '25f9e794323b453885f5181f1b624d0b'),
-(30, 'Md', 'Yaseen', '1999-03-12', '1BM19CS400', 'yaseenmd.cs19@bmsce.ac.in', 'Computer Science & Engineering', 4, 'M', 9108735020, 'yaseen.jpeg', '25f9e794323b453885f5181f1b624d0b');
+(31, 'ankush', 'kalsotra', '2002-01-19', '1RV20IS008', 'ankush.is20@rvce.edu.in', 'Computer Science & Engineering', 4, 'M', 9696580123, '1RV20IS008.png', 'e2be8d9c5295aa1b59362b7420fac503'),
+(32, 'Nitin', 'Singh', '2002-01-29', '1RV20CS102', 'nitinsingh.cs20@rvce.edu.in', 'Computer Science & Engineering', 5, 'M', 8899865679, 'sasuke.png', '8c71eede42e38709e9e836021b0b9b9b'),
+(34, 'Ankush', 'Mahajan', '2003-01-12', '1RV20CS008', 'mahajanankush49@gmail.com', 'Computer Science & Engineering', 4, 'M', 8899001205, 'person.jpg', 'e2be8d9c5295aa1b59362b7420fac503'),
+(36, 'affan', 'ahmad', '2001-02-07', '1RV20IS034', 'affan.is20@rvce.edu.in', 'Information Science Engineering', 4, 'M', 38478379473, 'gojo.jpg', 'e807f1fcf82d132f9bb018ca6738a19f'),
+(37, 'JS', 'Vaishnav', '2002-02-02', '1RV20CS023', 'vaishnav.cs20@rvce.edu.in', 'Computer Science & Engineering', 4, 'M', 7889845484, 'hp1.jpg', 'e2be8d9c5295aa1b59362b7420fac503');
 
 -- --------------------------------------------------------
 
@@ -299,7 +340,7 @@ CREATE TABLE `sub_reg` (
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
   `credits` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sub_reg`
@@ -313,7 +354,21 @@ INSERT INTO `sub_reg` (`usn`, `sub_name`, `sub_code`, `credits`) VALUES
 ('1BM19CS404', 'PW-2', '19CS4PCPW2', 2),
 ('1BM19CS401', 'Linear Algerba', '19MA4BSLIA', 4),
 ('1BM19CS401', 'TFCS', '19CS4PCTFC', 4),
-('1BM19CS401', 'DBMS', '19CS4PCDBM', 4);
+('1BM19CS401', 'DBMS', '19CS4PCDBM', 4),
+('1RV20CS121', 'Compiler Design', '18CS62', 3),
+('1RV20IS321', 'DBMS', '19CS4PCDBM\r\n', 4),
+('1RV20IS008', 'Linear Algerba', '18MA41', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tickets`
+--
+
+CREATE TABLE `tickets` (
+  `usn` int(11) NOT NULL,
+  `message` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -323,13 +378,15 @@ INSERT INTO `sub_reg` (`usn`, `sub_name`, `sub_code`, `credits`) VALUES
 -- Indexes for table `add_fst`
 --
 ALTER TABLE `add_fst`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `sub_code` (`sub_code`);
 
 --
 -- Indexes for table `add_s1`
 --
 ALTER TABLE `add_s1`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `sub_code` (`sub_code`);
 
 --
 -- Indexes for table `add_s2`
@@ -347,13 +404,17 @@ ALTER TABLE `add_s3`
 -- Indexes for table `add_s4`
 --
 ALTER TABLE `add_s4`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `sub_code` (`sub_code`),
+  ADD UNIQUE KEY `sub_name` (`sub_name`),
+  ADD UNIQUE KEY `sub_name_2` (`sub_name`);
 
 --
 -- Indexes for table `add_s5`
 --
 ALTER TABLE `add_s5`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `sub_code` (`sub_code`);
 
 --
 -- Indexes for table `add_s6`
@@ -372,6 +433,12 @@ ALTER TABLE `add_s7`
 --
 ALTER TABLE `add_s8`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `chatbot`
+--
+ALTER TABLE `chatbot`
+  ADD PRIMARY KEY (`c_id`);
 
 --
 -- Indexes for table `fst_reg`
@@ -393,7 +460,7 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `add_fst`
 --
 ALTER TABLE `add_fst`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `add_s1`
@@ -417,13 +484,13 @@ ALTER TABLE `add_s3`
 -- AUTO_INCREMENT for table `add_s4`
 --
 ALTER TABLE `add_s4`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `add_s5`
 --
 ALTER TABLE `add_s5`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `add_s6`
@@ -453,7 +520,7 @@ ALTER TABLE `fst_reg`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
