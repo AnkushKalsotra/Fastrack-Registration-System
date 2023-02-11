@@ -34,12 +34,16 @@ $row = mysqli_fetch_array($stud);
                 </div>
             </div>
         </div>
-        <div class="typing-field">
+        <!-- <div class="typing-field">
             <div class="input-data">
                 <input id="data" type="text" placeholder="Type something here.." required>
                 <button id="send-btn">Send</button>
             </div>
-        </div>
+        </div> -->
+
+        <input class="form-control mr-sm-2" type="search" placeholder="Type something here.." id="searchInput">
+  <button id="send-btn" class="btn btn-success my-2 my-sm-0" type="submit">Send</button>
+  <button class="btn btn-outline-success ml-2" id="micBtn"><i class="fas fa-microphone"></i></button>
         
     </div>
     <script>
@@ -65,7 +69,27 @@ $row = mysqli_fetch_array($stud);
                 });
             });
         });
-    </script>
+
+
+        const micBtn = document.querySelector("#micBtn");
+        const searchInput = document.querySelector("#searchInput");
+        
+        micBtn.addEventListener("click", () => {
+            console.log("idr aaya hu");
+          const recognition = new webkitSpeechRecognition();
+          recognition.continuous = false;
+          recognition.interimResults = false;
+          recognition.lang = "en-US";
+
+          recognition.start();
+          recognition.onresult = (event) => {
+            searchInput.value = event.results[0][0].transcript;
+            recognition.stop();
+            
+          };
+         
+        });
+            </script>
     
 </body>
 </html>

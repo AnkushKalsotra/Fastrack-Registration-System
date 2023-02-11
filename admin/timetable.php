@@ -65,17 +65,17 @@
 <a href="<?php echo $dir . $file; ?>">
     <i class="fas fa-file-pdf pdf-icon"></i>
     <?php echo $file; ?>
-</a>
+<!-- </a>
 <p><?php echo $pdf_text; ?></p>
     <i class="fas fa-file-pdf pdf-icon"></i>
       <?php echo $file; ?>
-    </a>
+    </a> -->
     </div>
 </body>
 </html>
 
 
-<div class="container">
+<!-- <div class="container">
         <h1>Upload PDF Document</h1>
         <form action="upload.php" method="post" enctype="multipart/form-data">
        
@@ -85,8 +85,8 @@
         <div class="progress-bar">
             <div class="progress" style="width: 0%"></div>
         </div>
-    </div>
-
+    </div> -->
+<!-- 
     <?php
         if (isset($_POST['pdf_text']) && isset($_FILES['pdf_file'])) {
             $pdf_text = $_POST['pdf_text'];
@@ -104,4 +104,4 @@
             echo '</a>';
             echo '</div>';
         }
-    ?>
+    ?> -->

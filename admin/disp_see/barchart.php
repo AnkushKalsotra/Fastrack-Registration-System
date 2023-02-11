@@ -37,7 +37,7 @@
 
     var options = {
       chart: {
-        title: 'SEE Registers',
+        title: 'Fastrack Registers',
         subtitle: 'Subject Name and Count of Students Associated with each Subject',
       },
       bars: 'horizontal' // Required for Material Bar Charts.

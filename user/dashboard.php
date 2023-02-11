@@ -276,7 +276,7 @@ if (!$rr) {
                 <li><a href="dashboard.php?page=register"><i class="fas fa-pen"></i>Register For Exam</a></li>
                 <li><a href="dashboard.php?page=subjects_reg"><i class="far fa-file"></i> Registered Subjects</a></li>
                 <li><a href="dashboard.php?page=time_table"><i class="far fa-file"></i> CheckForTimeTable</a></li>
-                <li><a href="dashboard.php?page=chatbot"><i class="far fa-file"></i> ChatBot</a></li>
+                <li><a href="dashboard.php?page=chatbot"></> ? Help</a></li>
                 <!-- <li><a href="dashboard.php?page=fast_reg"><i class="fas fa-pen"></i>Register For fastrack</a></li>  -->
             </ul>
         </div>

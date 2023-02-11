@@ -1,28 +1,7 @@
 <?php
 error_reporting(0);
 require_once('../connection.php');
-if (isset($_POST['sub'])) {
-  if (!isset($_SESSION['user'])) {
 
-
-$checkbox1 = $_POST['sub'];
-for ($i = 0; $i < sizeof($checkbox1); $i++) {
-  $query = "SELECT sub_code, credits  from add_s4 where sub_name = '$checkbox1[$i]'";
-  $q1 = mysqli_query($con, $query);
-  while ($row = mysqli_fetch_assoc($q1)) {
-    $code = $row['sub_code'];
-    $cred = $row['credits'];
-    $query1 = "INSERT INTO sub_reg VALUES ('$user','$checkbox1[$i]','$code','$cred')";
-    $res1 = mysqli_query($con, $query1) or die("Error : " . mysqli_error($con));
-    if ($res1) {
-      $exec1 = "<font color='primary'>Your Response Has Been Recorded.!</font>";
-    } else {
-      $exec1 = "<font color='red';font-family:'Acme';>Error in Registration.!</font>";
-    }
-  }
-}
-}
-}
 
 ?>
   
@@ -34,7 +13,7 @@ for ($i = 0; $i < sizeof($checkbox1); $i++) {
   $rr = mysqli_num_rows($q);
   if (!$rr) {
     echo "<h2 style='color:red;color:#ff0000;font-family:Acme;'>No Subjects Listed/Added Yet.</h2>";
-  } else {
+  } else {}
   ?>
 
 
@@ -129,41 +108,62 @@ for ($i = 0; $i < sizeof($checkbox1); $i++) {
     <h1 class="myh1">4th Semester Courses</h1>
     <div class="forms">
 
-      <form class="myform" method="POST">
-        <p style="font-family:'Bitter';font-size:20px;text-align:center;"><?php echo @$exec1; ?></p>
-        <table width="100%">
-          <tr>
-            <th> Select</th>
-            <th> Course name</th>
-            <th> Course Code</th>
-            <th> Credits </th>
-          </tr>
+    <form class="myform" method="POST">
+  <p style="font-family:'Bitter';font-size:20px;text-align:center;"><?php echo @$exec1; ?></p>
+  <table width="100%">
+    <tr>
+      <th> Select</th>
+      <th> Course name</th>
+      <th> Course Code</th>
+      <th> Credits </th>
+    </tr>
 
-          <?php
+    <?php
+    while ($row = mysqli_fetch_array($q)) {
+      echo "<tr style='color:black;font-size:18px;'>";
+      echo "<td> <input type='checkbox' class='geekmark' name='sub[]' value = '" . $row['sub_name'] . "' /></td>";
+      echo "<td align = 'center'>" . $row['sub_name'] . "</td>";
+      echo "<td align = 'center'>" . $row['sub_code'] . "</td>";
+      echo "<td align = 'center'>" . $row['credits'] . "</td>";
+      echo "</tr>";
+    }
+    ?>
 
-          while ($row = mysqli_fetch_array($q)) {
-            echo "<tr style='color:black;font-size:18px;'>";
-            echo "<td> <input type='checkbox' class='geekmark' value = ' . $row[id] . ' /></td>";
-            echo "<td align = 'center'>" . $row['sub_name'] . "</td>";
-            echo "<td align = 'center'>" . $row['sub_code'] . "</td>";
-            echo "<td align = 'center'>" . $row['credits'] . "</td>"; ?>
-
-        <?php }
-        }
-
-        ?>
-        <tr>
-          <!-- <td colspan="2"> <input class="btn login_btn" type="submit" name="register" value="Submit" /> </td>-->
-          <form method=post>
-          <td colspan="2"> 
-  <input class="btn login_btn" type="submit" name="sub" value="Submit" />
-</td></form>
-
-          <td colspan="2"> <input class="btn reset_btn" onClick="window.location.href=window.location.href" type="reset" value="Reset"></td>
-        </tr>
-        </table>
+    <tr>
+      <form method="post">
+        <td colspan="2">
+          <input class="btn login_btn" type="submit" name="submit" value="Submit" />
+        </td>
       </form>
-    </div>
+      <td colspan="2">
+        <input class="btn reset_btn" onClick="window.location.href=window.location.href" type="reset" value="Reset">
+      </td>
+    </tr>
+  </table>
+</form>
+
+<?php
+if (isset($_POST['submit'])) {
+  $checkbox1 = $_POST['sub'];
+for ($i = 0; $i < sizeof($checkbox1); $i++) {
+  $query = "SELECT sub_code, credits  from add_s4 where sub_name = '$checkbox1[$i]'";
+  $q1 = mysqli_query($con, $query);
+  while ($row = mysqli_fetch_assoc($q1)) {
+    $code = $row['sub_code'];
+    $cred = $row['credits'];
+    $query1 = "INSERT INTO sub_reg VALUES ('$user','$checkbox1[$i]','$code','$cred')";
+    $res1 = mysqli_query($con, $query1) or die("Error : " . mysqli_error($con));
+    if ($res1) {
+      $exec1 = "<font color='primary'>Your Response Has Been Recorded.!</font>";
+    } else {
+      $exec1 = "<font color='red';font-family:'Acme';>Error in Registration.!</font>";
+    }
+  }
+}
+
+}
+?>
+
 
 
   </body>

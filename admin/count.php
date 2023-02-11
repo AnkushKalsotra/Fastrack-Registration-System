@@ -131,7 +131,7 @@
     }
 
     #Count the number of subjects added for Fastrack.
-    $fst = "SELECT * FROM add_fst";
+    $fst = "SELECT * FROM sub_reg";
     $run_fst = mysqli_query($con,$fst);
 
     if($run_fst){

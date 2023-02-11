@@ -84,7 +84,7 @@
                 <th style='border:2px solid black'>Credits</th>
                 <!-- <th style='border:2px solid black'></th>
                 <th style='border:2px solid black'></th> -->
-                <th style='border:2px solid black'>Delete</th>
+                <!-- <th style='border:2px solid black'>Delete</th> -->
 		    </tr>
             <?php
                 $i=1;
@@ -99,7 +99,7 @@
                         // echo "<td style='border:2px solid black'>".$row['phno']."</td>";
             ?>
                 
-                        <td align = 'center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class = "fa fa-trash"></i></a> </td>
+                        <!-- <td align = 'center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class = "fa fa-trash"></i></a> </td> -->
             <?php
                 echo "<tr />";
                 $i++;

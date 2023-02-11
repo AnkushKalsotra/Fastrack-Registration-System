@@ -511,25 +511,16 @@ include('count.php');
                                         </a>
                                         <!-- /.dashboard-stat -->
                                     </div>
-                                    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                         <a class="dashboard-stat1" href="dashboard.php?page=manage_users_fst">
-                                            <span class="number counter"><?php echo "$count1"; ?></span>
+                                            <span class="number counter"><?php echo "$fst1"; ?></span>
                                             <span class="name">Students Registered<br />For Fastrack Exam</span>
                                             <span class="bg-icon"><i class="fa fa-users"></i></span>
                                         </a>
                                         <!-- /.dashboard-stat -->
                                     </div>
-                                    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
-                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <a class="dashboard-stat11" href="dashboard.php?page=manage_sub_fst">
-                                            <span class="number"><?php echo "$fst1"; ?></span>
-                                            <span class="name">Subjects Listed<br />For Fastrack</span>
-                                            <span class="bg-icon"><i class="fa fa-bars"></i></span>
-                                        </a>
-                                        <!-- /.dashboard-stat -->
-                                    </div>
-
+                                    
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                         <a class="dashboard-stat11" href="dashboard.php?page=graph">
                                             <span class="number"><?php echo ""; ?></span>
@@ -538,6 +529,11 @@ include('count.php');
                                         </a>
                                         <!-- /.dashboard-stat -->
                                     </div>
+                                    <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+                                 
+                                
+
+                                 
                                     
 
                                 </div>
