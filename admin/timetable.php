@@ -9,14 +9,23 @@
             text-align: center;
         }
         .pdf-icon {
-        display: inline-block;
-        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/640px-PDF_file_icon.svg.png') no-repeat;
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        vertical-align: middle;
-      }
+    display: inline-block;
+    background: url('/fastrack/pdf-icon.png') no-repeat;
+    width: 98px;
+    height: 125px;
+   
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 135px;
+    margin-bottom: 108px;
+  }
 
+  .pdf-icon span {
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 120px;
+  }
         input[type="file"] {
             padding: 10px;
             border: 1px solid #ccc;
@@ -47,7 +56,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Upload PDF Document</h1>
+        <h1>Upload Result</h1>
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <input type="file" name="pdf_file">
            
@@ -63,13 +72,14 @@
       $files = scandir($dir);
 
       foreach ($files as $file) {
-          if (strpos($file, '.pdf') !== false) {
-              echo '<a href="' . $dir . $file . '">';
-              echo '<i class="fas fa-file-pdf pdf-icon"></i>';
-              echo $file;
-              echo '</a><br>';
-          }
+        if ($file == "." || $file == "..") continue;
+        echo "<a href='$dir$file'>
+          <div class='pdf-icon'>
+            <span>$file</span>
+          </div>
+        </a>";
       }
+      
     ?>
 </body>
 </html>
