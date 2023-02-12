@@ -50,7 +50,7 @@
         <h1>Upload PDF Document</h1>
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <input type="file" name="pdf_file">
-            <input type="text" name="pdf_text" placeholder="Enter the PDF text">
+           
             <input type="submit" value="Upload">
         </form>
         <div class="progress-bar">
@@ -59,49 +59,38 @@
     </div>
 
     <?php
-      $dir = "/fastrack/admin/upload_timetable/";
-      $file = "timetable.pdf";
+      $dir = "upload_timetable/";
+      $files = scandir($dir);
+
+      foreach ($files as $file) {
+          if (strpos($file, '.pdf') !== false) {
+              echo '<a href="' . $dir . $file . '">';
+              echo '<i class="fas fa-file-pdf pdf-icon"></i>';
+              echo $file;
+              echo '</a><br>';
+          }
+      }
     ?>
-<a href="<?php echo $dir . $file; ?>">
-    <i class="fas fa-file-pdf pdf-icon"></i>
-    <?php echo $file; ?>
-<!-- </a>
-<p><?php echo $pdf_text; ?></p>
-    <i class="fas fa-file-pdf pdf-icon"></i>
-      <?php echo $file; ?>
-    </a> -->
-    </div>
 </body>
 </html>
 
+<?php
+if (isset($_FILES['pdf_file'])) {
+    $pdf_file = $_FILES['pdf_file'];
 
-<!-- <div class="container">
-        <h1>Upload PDF Document</h1>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-       
-            <input type="file" name="pdf_file">
-            <input type="submit" value="Upload">
-        </form>
-        <div class="progress-bar">
-            <div class="progress" style="width: 0%"></div>
-        </div>
-    </div> -->
-<!-- 
-    <?php
-        if (isset($_POST['pdf_text']) && isset($_FILES['pdf_file'])) {
-            $pdf_text = $_POST['pdf_text'];
-            $pdf_file = $_FILES['pdf_file'];
-            
-            // Upload the PDF file to the desired directory
-            move_uploaded_file($pdf_file['tmp_name'], $dir . $pdf_file['name']);
+    // Get the original file name
+    $original_file_name = $pdf_file['name'];
 
-            // Display the uploaded PDF file along with its corresponding text
-            echo '<div class="pdf-container">';
-            echo '<p>' . $pdf_text . '</p>';
-            echo '<a href="' . $dir . $pdf_file['name'] . '">';
-            echo '<i class="fas fa-file-pdf pdf-icon"></i>';
-            echo $pdf_file['name'];
-            echo '</a>';
-            echo '</div>';
-        }
-    ?> -->
+    // Upload the PDF file to the desired directory
+    move_uploaded_file($pdf_file['tmp_name'], $dir . $original_file_name);
+
+    // Display the uploaded PDF file
+    echo '<div class="pdf-container">';
+    echo '<a href="' . $dir . $original_file_name . '">';
+    echo '<i class="fas fa-file-pdf pdf-icon"></i>';
+    echo $original_file_name;
+    echo '</a>';
+    echo '</div>';
+}
+?>
+

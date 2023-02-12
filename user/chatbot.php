@@ -20,7 +20,7 @@ $row = mysqli_fetch_array($stud);
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
-<body>
+<>
     <div class="wrapper">
         <div class="title">Fastrack Chatbot</div>
         <div class="form">
@@ -29,24 +29,50 @@ $row = mysqli_fetch_array($stud);
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="msg-header">
-                <p><?php  echo "Hello " . $row['fname'] . " " . $row['lname'] . ", How can I help you?"; ?></p>
-
+                <?php
+                    if (isset($row) && array_key_exists('fname', $row) && array_key_exists('lname', $row)) {
+                        echo "<p>Hello " . $row['fname'] . " " . $row['lname'] . ", How can I help you?</p>";
+                    } else {
+                        echo "<p>Hello, How can I help you?</p>";
+                    }
+                ?>
                 </div>
             </div>
         </div>
-        <!-- <div class="typing-field">
-            <div class="input-data">
-                <input id="data" type="text" placeholder="Type something here.." required>
-                <button id="send-btn">Send</button>
-            </div>
-        </div> -->
-
-        <input class="form-control mr-sm-2" type="search" placeholder="Type something here.." id="searchInput">
-  <button id="send-btn" class="btn btn-success my-2 my-sm-0" type="submit">Send</button>
-  <button class="btn btn-outline-success ml-2" id="micBtn"><i class="fas fa-microphone"></i></button>
-        
+        <div class="typing-field">
+    
+        <div class="input-data">
+    <input id="data" type="text" placeholder="Type something here.." required>
+    <button id="send-btn">Send</button>
+</div>
+<button id="mic-btn">
+        <i class="fas fa-microphone"></i>
+    </button>
+        </div>
     </div>
+
     <script>
+    // Initialize the recognition object
+    
+        const micBtn = document.querySelector("#mic-btn");
+        const searchInput = document.querySelector("#data");
+
+        micBtn.addEventListener("click", () => {
+          const recognition = new webkitSpeechRecognition();
+          recognition.continuous = false;
+          recognition.interimResults = false;
+          recognition.lang = "en-US";
+
+          recognition.start();
+
+          recognition.onresult = (event) => {
+            searchInput.value = event.results[0][0].transcript;
+            recognition.stop();
+          };
+        });
+      
+
+
         $(document).ready(function(){
             $("#send-btn").on("click", function(){
                 $value = $("#data").val();
@@ -68,26 +94,6 @@ $row = mysqli_fetch_array($stud);
                     }
                 });
             });
-        });
-
-
-        const micBtn = document.querySelector("#micBtn");
-        const searchInput = document.querySelector("#searchInput");
-        
-        micBtn.addEventListener("click", () => {
-            console.log("idr aaya hu");
-          const recognition = new webkitSpeechRecognition();
-          recognition.continuous = false;
-          recognition.interimResults = false;
-          recognition.lang = "en-US";
-
-          recognition.start();
-          recognition.onresult = (event) => {
-            searchInput.value = event.results[0][0].transcript;
-            recognition.stop();
-            
-          };
-         
         });
             </script>
     
