@@ -7,18 +7,15 @@ $row = mysqli_fetch_assoc($query);
 
 <?php
 extract($_POST);
-if(isset($Update))
-{
-$q = "UPDATE add_s1 set sub_name = '$sname',sub_code = '$scode',credits = '$credits' where id= '$id'";
-$sql = mysqli_query($con, "select * from add_s1 where sub_code = '$scode'");
-$r = mysqli_num_rows($sql);
-if ($r == true) {
-    $err = "<font color='red'>subject Already Exists..!</font>";
-} else {
-$sql = "INSERT INTO add_s1 VALUES ('','$sname','$scode','$credit')";
-$exec = mysqli_query($con, $sql);
-    $err = "<font color='green'>Subject Updated Successfully..!</font>";
-}
+if (isset($Update)) {
+    $q = "UPDATE add_s1 set sub_name = '$sname',sub_code = '$scode',credits = '$credits' where id = '$id'";
+    $run = mysqli_query($con, $q);
+    if ($run) {
+        $err = "<font color='green' align='center'>Subject Updated Successfully...!</font>";
+        header('location:dashboard.php?page=disp_s1');
+    } else {
+        $err = "<font color='red' align='center'>Error in Updating Subject.!</font>";
+    }
 }
 
 ?>
@@ -93,7 +90,6 @@ $exec = mysqli_query($con, $sql);
                             <option name="s3"> 2 </option>
                             <option name="s4"> 3 </option>
                             <option name="s5" selected> 4 </option>
-                            <option name="s6"> 5 </option>
                         </select>
                     </td>
                 </tr>

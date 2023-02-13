@@ -9,17 +9,19 @@
     extract($_POST);
     if(isset($Update))
     {
-    $q = "UPDATE add_s5 set sub_name = '$sname',sub_code = '$scode',credits = '$credits' where id= '$id'";
-    $sql = mysqli_query($con, "select * from add_s5 where sub_code = '$scode'");
-    $r = mysqli_num_rows($sql);
-    if ($r == true) {
-        $err = "<font color='red'>subject Already Exists..!</font>";
-    } else {
-    $sql = "INSERT INTO add_s5 VALUES ('','$sname','$scode','$credits')";
-    $exec = mysqli_query($con, $sql);
-        $err = "<font color='green'>Subject Updated Successfully..!</font>";
+    $q = "UPDATE add_s5 set sub_name = '$sname',sub_code = '$scode',credits = '$credits' where id = '$id'";
+    $run = mysqli_query($con,$q);
+    if($run)
+    {
+        $err="<font color='green' align='center'>Subject Updated Successfully...!</font>";	
+        header('location:dashboard.php?page=disp_s5');
     }
+    else
+    {
+        $err="<font color='red' align='center'>Error in Updating Subject.!</font>";	
     }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +91,6 @@
                             <option name = "s3"> 2 </option>
                             <option name = "s4"> 3 </option>
                             <option name = "s5" selected> 4 </option>
-                            <option name="s6"> 5 </option>
                         </select>
                     </td>
                 </tr>                

@@ -7,7 +7,7 @@ if (isset($Add)) {
     if ($r == true) {
         $err = "<font color='red'>subject Already Exists..!</font>";
     } else {
-    $sql = "INSERT INTO add_s5 VALUES ('','$sname','$scode','$credit')";
+    $sql = "INSERT INTO add_s2 VALUES ('','$sname','$scode','$credit')";
     $exec = mysqli_query($con, $sql);
         $err = "<font color='green'>Subject Added Successfully..!</font>";
     }
