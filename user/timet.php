@@ -37,7 +37,7 @@
         </a>";
       }
     } else {
-      echo "<p style='text-align: center;'>No timetable uploaded. Please wait for a few days.</p>";
+      echo "<p style='text-align: center;'>No Result uploaded. Please wait for a few days.</p>";
     }
     ?>
   </body>

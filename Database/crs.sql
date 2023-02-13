@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2023 at 10:08 AM
+-- Generation Time: Feb 13, 2023 at 05:29 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -251,10 +251,25 @@ CREATE TABLE `chatbot` (
 --
 
 INSERT INTO `chatbot` (`c_id`, `queries`, `replies`) VALUES
-(0, 'hi|hey|hello|hii|hy', 'Hello there!'),
+(0, 'hi |hey |hello  |hii |hy | hello chatbot | hi chatbot | hey chatbot | hello bot | hi bot | hey bot', 'Hello there!'),
 (1, 'What is your name | what is your name? | What is ur name?', 'I dont have a name, I am a fastrack Chatbot but you can call me anything :)'),
-(3, 'who created you | who made u | who developed you? | who developed u ', 'I was developed by a team of 3rd year ISE students.'),
-(4, 'how can I register for fastrack examination? | how do I register for fastrack exam? | how can I register for fastrack | register me for fastrack', 'first goto Registered Subjects then select the subject that you want to register for fastrack examination. Press Submit and boom you have registered for fastrack');
+(3, 'who created you | who made you | who developed you? | who developed you |who is your creator ', 'I was developed by a team of 3rd year ISE students.'),
+(4, 'how can I register for fastrack examination? | how do I register for fastrack exam? | how can I register for fastrack | register me for fastrack | how to register | how can I register for FT|how can I register for FT examination | how to use', 'first goto Registered Subjects then select the subject that you want to register for fastrack examination. Press Submit and boom you have registered for fastrack'),
+(5, 'Good Morning |Good Afternoon |Good Evening | Good Night', 'Good day! How can I assist you today?'),
+(6, 'What is Fastrack registration system |What is Fastrack | fastrack | Fastrack', 'Fastrack registration system is a system designed for students who have failed in a normal examination to take a second chance exam, also known as a fastrack exam.'),
+(7, 'When is the fastrack exam conducted |   conduct  | exam dates | dates |', 'The fastrack exam is typically conducted after the normal examination and at a later date, usually within a specified period of time.'),
+(8, 'Can I take the fastrack exam online?', 'Currently No but it some systems may offer the option to take the exam online, while others may require you to attend in-person exams at a designated location.'),
+(9, 'What happens if I fail the fastrack exam again | What if I fail fastrack | fail | fail in FT | Fail in Fastrack | fail in fastrack', 'If you fail the fastrack exam, you may need to reapply for the next fastrack exam or consider alternative options, such as enrolling in a course or studying on your own.'),
+(10, 'Is there a fee for the fastrack exam | Fee | Payment | ', 'Yes, there may be a fee associated with the fastrack exam, which you will need to pay when you register for the exam.'),
+(11, 'When will I receive my results for the Fastrack exam? | Result | result', 'The time it takes to receive your results for the fastrack exam will depend on the specific fastrack registration system you are using. You can typically check your results online or through the fastrack registration system after they are released.'),
+(12, 'Can I get a certificate if I pass the Fastrack exam | certificate', 'Yes, if you pass the fastrack exam, you will receive a certificate indicating your successful completion of the exam.'),
+(13, 'why do we need this system | why do anyone need this system | need | requirement | required ', 'It helps students to easily register instead of waiting in long queues.'),
+(14, 'how can you help me | help | what can you do | why do I need you |  job  |', 'I am there to assist you Just try me out'),
+(15, 'who is admin |  Admin  |  admin  |', 'Admin is Dean Academics.'),
+(16, '  Thank  |  Thank you  |  Thanks  | Thanks a lot  |  experience  |  wonderful  |  amazing  |', 'Glad you liked me'),
+(17, '  Bye  |  bye  | see you soon ', 'Take care come back later'),
+(18, ' timetable | Timetable |', 'Check timetable in Dashboard.\r\n'),
+(19, 'who am i | who am I | who am I? | who am i?', 'you are a student using this system. You can check your profile to see your details');
 
 -- --------------------------------------------------------
 
@@ -327,7 +342,9 @@ INSERT INTO `registration` (`id`, `fname`, `lname`, `bdate`, `usn`, `email`, `de
 (32, 'Nitin', 'Singh', '2002-01-29', '1RV20CS102', 'nitinsingh.cs20@rvce.edu.in', 'Computer Science & Engineering', 5, 'M', 8899865679, 'sasuke.png', '8c71eede42e38709e9e836021b0b9b9b'),
 (34, 'Ankush', 'Mahajan', '2003-01-12', '1RV20CS008', 'mahajanankush49@gmail.com', 'Computer Science & Engineering', 4, 'M', 8899001205, 'person.jpg', 'e2be8d9c5295aa1b59362b7420fac503'),
 (36, 'affan', 'ahmad', '2001-02-07', '1RV20IS034', 'affan.is20@rvce.edu.in', 'Information Science Engineering', 4, 'M', 38478379473, 'gojo.jpg', 'e807f1fcf82d132f9bb018ca6738a19f'),
-(37, 'JS', 'Vaishnav', '2002-02-02', '1RV20CS023', 'vaishnav.cs20@rvce.edu.in', 'Computer Science & Engineering', 4, 'M', 7889845484, 'hp1.jpg', 'e2be8d9c5295aa1b59362b7420fac503');
+(37, 'JS', 'Vaishnav', '2002-02-02', '1RV20CS023', 'vaishnav.cs20@rvce.edu.in', 'Computer Science & Engineering', 4, 'M', 7889845484, 'hp1.jpg', 'e2be8d9c5295aa1b59362b7420fac503'),
+(38, 'mohit', 'manihara', '2004-02-02', '1RV20CS010', 'mohitmanihara.is20@rvce.edu.in', 'Computer Science & Engineering', 4, 'M', 7889870566, 'gt1.jpg', 'e2be8d9c5295aa1b59362b7420fac503'),
+(39, 'Arpit', 'Verma', '2001-02-14', '1RV20IS012', 'arpitverma.is20@rvce.edu.in', 'Information Science Engineering', 5, 'M', 7889857456, '4058171.jpg', 'e2be8d9c5295aa1b59362b7420fac503');
 
 -- --------------------------------------------------------
 
@@ -339,25 +356,17 @@ CREATE TABLE `sub_reg` (
   `usn` varchar(255) NOT NULL,
   `sub_name` varchar(255) NOT NULL,
   `sub_code` varchar(255) NOT NULL,
-  `credits` bigint(255) NOT NULL
+  `credits` bigint(255) NOT NULL,
+  `sem` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sub_reg`
 --
 
-INSERT INTO `sub_reg` (`usn`, `sub_name`, `sub_code`, `credits`) VALUES
-('1BM19CS404', 'Linear Algerba', '19MA4BSLIA', 4),
-('1BM19CS404', 'TFCS', '19CS4PCTFC', 4),
-('1BM19CS404', 'DBMS', '19CS4PCDBM', 4),
-('1BM19CS404', 'ADA', '19CS4PCADA', 4),
-('1BM19CS404', 'PW-2', '19CS4PCPW2', 2),
-('1BM19CS401', 'Linear Algerba', '19MA4BSLIA', 4),
-('1BM19CS401', 'TFCS', '19CS4PCTFC', 4),
-('1BM19CS401', 'DBMS', '19CS4PCDBM', 4),
-('1RV20CS121', 'Compiler Design', '18CS62', 3),
-('1RV20IS321', 'DBMS', '19CS4PCDBM\r\n', 4),
-('1RV20IS008', 'Linear Algerba', '18MA41', 4);
+INSERT INTO `sub_reg` (`usn`, `sub_name`, `sub_code`, `credits`, `sem`) VALUES
+('1RV20IS012', 'Computer Network', '18IS52', 4, 5),
+('1RV20CS023', 'Linear Algerba', '18MA41', 4, 4);
 
 -- --------------------------------------------------------
 
@@ -520,7 +529,7 @@ ALTER TABLE `fst_reg`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -82,9 +82,8 @@
                 <th style='border:2px solid black'>Course_name</th>
                 <th style='border:2px solid black'>Course_Code</th>
                 <th style='border:2px solid black'>Credits</th>
-                <!-- <th style='border:2px solid black'></th>
-                <th style='border:2px solid black'></th> -->
-                <!-- <th style='border:2px solid black'>Delete</th> -->
+                <th style='border:2px solid black'>Semester</th>
+                 <!-- <th style='border:2px solid black'>Delete</th> -->
 		    </tr>
             <?php
                 $i=1;
@@ -96,10 +95,17 @@
                         echo "<td style='border:2px solid black'>".$row['sub_name']."</td>";
                         echo "<td style='border:2px solid black'>".$row['sub_code']."</td>";
                         echo "<td style='border:2px solid black'>".$row['credits']."</td>";
-                        // echo "<td style='border:2px solid black'>".$row['phno']."</td>";
+                        echo "<td style='border:2px solid black'>".$row['sem']."</td>";
+                    
             ?>
                 
-                        <!-- <td align = 'center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class = "fa fa-trash"></i></a> </td> -->
+                <!-- <td align='center' style='border:2px solid black'>
+                   <a href="javascript:DeleteUser('<?php echo $row['usn'] . " " . $row['course_code']; ?>')" style='color:red'>
+                   <i class='fa fa-trash'></i>
+                 </a>
+                </td> -->
+                
+
             <?php
                 echo "<tr />";
                 $i++;

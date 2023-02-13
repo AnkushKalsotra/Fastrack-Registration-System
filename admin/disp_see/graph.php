@@ -34,6 +34,14 @@
             </a>
             <!-- /.dashboard-stat -->
           </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <a class="dashboard-stat1" href="dashboard.php?page=piechart1">
+              <span class="number"><?php echo ""; ?></span>
+              <span class="name">Number of Fastracks<br /> registered</span>
+              <span class="bg-icon"><i class="fa fa-bars"></i></span>
+            </a>
+            <!-- /.dashboard-stat -->
+          </div>
         </div>
       </div>
     </section>

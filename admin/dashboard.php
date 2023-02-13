@@ -400,6 +400,9 @@ include('count.php');
                 if($page=="barchart"){
                     include('disp_see/barchart.php');
                 }
+                if($page=="piechart1"){
+                    include('disp_see/piechart1.php');
+                }
             } else {
             ?>
                 <!-- container end-->

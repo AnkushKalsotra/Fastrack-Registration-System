@@ -105,7 +105,7 @@ require_once('../connection.php');
   </head>
 
   <body>
-    <h1 class="myh1">4th Semester Courses</h1>
+    <h1 class="myh1">6th Semester Courses</h1>
     <div class="forms">
 
     <form class="myform" method="POST">
@@ -151,7 +151,7 @@ for ($i = 0; $i < sizeof($checkbox1); $i++) {
   while ($row = mysqli_fetch_assoc($q1)) {
     $code = $row['sub_code'];
     $cred = $row['credits'];
-    $query1 = "INSERT INTO sub_reg VALUES ('$user','$checkbox1[$i]','$code','$cred')";
+    $query1 = "INSERT INTO sub_reg VALUES ('$user','$checkbox1[$i]','$code','$cred',6)";
     $res1 = mysqli_query($con, $query1) or die("Error : " . mysqli_error($con));
     if ($res1) {
       $exec1 = "<font color='primary'>Your Response Has Been Recorded.!</font>";

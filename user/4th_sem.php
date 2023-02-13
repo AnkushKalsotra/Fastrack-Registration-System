@@ -101,7 +101,7 @@ require_once('../connection.php');
         background-color: whitesmoke;
       }
     </style>
-    <title>CSE | 4th Sem</title>
+    <title> 4th Sem</title>
   </head>
 
   <body>
@@ -125,6 +125,7 @@ require_once('../connection.php');
       echo "<td align = 'center'>" . $row['sub_name'] . "</td>";
       echo "<td align = 'center'>" . $row['sub_code'] . "</td>";
       echo "<td align = 'center'>" . $row['credits'] . "</td>";
+      // echo "<td align = 'center'>" . $row['sem'] . "</td>";
       echo "</tr>";
     }
     ?>
@@ -151,7 +152,7 @@ for ($i = 0; $i < sizeof($checkbox1); $i++) {
   while ($row = mysqli_fetch_assoc($q1)) {
     $code = $row['sub_code'];
     $cred = $row['credits'];
-    $query1 = "INSERT INTO sub_reg VALUES ('$user','$checkbox1[$i]','$code','$cred')";
+    $query1 = "INSERT INTO sub_reg VALUES ('$user','$checkbox1[$i]','$code','$cred',4)";
     $res1 = mysqli_query($con, $query1) or die("Error : " . mysqli_error($con));
     if ($res1) {
       $exec1 = "<font color='primary'>Your Response Has Been Recorded.!</font>";
