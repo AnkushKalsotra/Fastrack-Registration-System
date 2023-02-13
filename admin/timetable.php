@@ -16,7 +16,7 @@
    
     background-size: contain;
     vertical-align: middle;
-    margin-right: 135px;
+    margin-right: 423px;
     margin-bottom: 108px;
   }
 

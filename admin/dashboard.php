@@ -303,7 +303,7 @@ include('count.php');
                 </li>
                 <!-- <li><a href="dashboard.php?page=add_fst"><i class="fas fa-plus"></i>Add Subject [Fastrack]</a></li>
                 <li><a href="dashboard.php?page=manage_sub_fst"><i class="fas fa-bars"></i>Manage Fastrack &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subjects</a></li> -->
-                <li><a href="dashboard.php?page=timetable"><i class="fas fa-plus"></i>TimeTable</a></li>
+                <li><a href="dashboard.php?page=timetable"><i class="fas fa-plus"></i>Result</a></li>
             </ul>
         </div>
         <div class="col-sm-12 col-sm-offset-12 col-md-10 col-md-offset-2 main">
